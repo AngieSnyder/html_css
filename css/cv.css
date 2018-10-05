@@ -1,0 +1,12 @@
+div{
+    width: 49%;
+    display: inline-block;
+}
+.rightjust{
+    text-align: right
+}
+.aligntop{
+    vertical-align: top
+}
+#name {font-size: 2em;
+font-weight:bold;}
