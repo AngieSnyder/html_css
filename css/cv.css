@@ -1,4 +1,4 @@
-div{
+.aligntop, .rightjust {
     width: 49%;
     display: inline-block;
 }
@@ -10,3 +10,26 @@ div{
 }
 #name {font-size: 2em;
 font-weight:bold;}
+p {
+    margin: 0;
+}
+.pad2{
+    padding-top: 0;
+}
+table{
+    width:100%;
+    }
+table,tr, th, td {
+    border: 1px solid silver;
+    border-collapse: collapse
+}
+td{
+    width: 20%;
+    text-align: center;
+    }
+.role {
+    font-weight: bold;
+}
+.company {
+    font-style: italic;
+}
