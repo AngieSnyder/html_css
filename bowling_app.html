@@ -1,13 +1,76 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Bowling Average</title>
+    <script>
+        function fillArraySumAndAvg() {
+           // let framesCtrl = getRefById('frames');
+            //let sumCtrl = getRefById('sum');
+            //let avgCtrl = getRefById('avg');
+
+            let scores = [];
+            //build frames array with 10 random numbers between 0 and 10
+            let sum = 0;
+            for (let idx = 0; idx < 10; idx++) {
+                let s = getRandomNumber();
+                scores.push(s);
+                sum += s;
+            }
+            let avg = sum / scores.length;
+            console.log(scores, sum, avg);
+            //pass the information from JavaScript to the HTML text boxes
+            //framesCtrl.textContent = scores.join();
+            $("#frames").text(scores);
+            //sumCtrl.value = sum;
+            $("#sum").val(sum);
+            //avgCtrl.value = avg;
+            $("#avg").val(avg);
+        }
+        function getRefById(id) {
+            return document.getElementById(id);
+        }
+        // generate a random number between 0 and 10
+        function getRandomNumber() {
+            return Math.floor(Math.random() * 11);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Bowling Demo</h1>
+
+    <h2>Frames</h2>
+    <p id='frames'>
+        The frames array goes here!
+    </p>
+    <p>Sum: <input type='text' id='sum'></p>
+    <p>Average: <input type='text' id='avg'></p>
+    <button onclick='fillArraySumAndAvg()'>Let's Bowl</button>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+<!-- <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bowling Average</title>
     <script language= "JavaScript">
-            var num = new Array(11);
-            var bowl = Math.floor(Math.random()*11);
+            var num = [];
+            var num = Math.floor(Math.random()*11);
     
             function getSum(total, num) {
                 return total + num;
@@ -37,54 +100,4 @@
  
 </body>
 
-</html> -->
-<!doctype html>
-<html lang='en'>
-<head><title></title>
-<style>* { text-align: center; font-size: 18pt; } </style>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script lang='javascript'>
-function fillArrayAndSum() {
-	var pCtrl = getRefById('array');
-	var sumCtrl = getRefById('sum');
-	//var avgCtrl = getRefById('avg');
-	var arr = [];
-	for(var idx = 0; idx < 10; idx++) {
-		arr.push(getRandomNumber());
-	}
-	pCtrl.textContent = arr.join();
-	sumCtrl.value = sumArray(arr);
-	//avgCtrl.value = calcAvg(arr);
-	$("#avg").val(calcAvg(arr));
-}
-function getRefById(id) {
-	return document.getElementById(id);
-}
-function getRandomNumber() {
-	return Math.floor(Math.random() * 11);
-}
-function sumArray(arr) {
-	var total = 0;
-	for(var idx = 0; idx < arr.length; idx++) {
-		total += arr[idx];
-	}
-	return total;
-}
-function calcAvg(arr) {
-	var sum = sumArray(arr);
-	var cnt = arr.length;
-	return sum / cnt;
-}
-</script>
-</head>
-<body>
-	<button onclick='fillArrayAndSum()'>Fill array then sum and average</button>
-	<div>
-		<p id='array'>
-			<span>The array goes here:</span><br /><br />
-		</p>	
-		<p>Sum: <input id='sum' type='text'></input></p>
-		<p>Avg: <input id='avg' type='text'></input></p>
-	</div>
-</body>
-</html>
+</html>  -->
